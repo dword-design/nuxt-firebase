@@ -1,0 +1,34 @@
+{
+  "name": "@dword-design/nuxt-firebase",
+  "version": "1.0.0",
+  "description": "",
+  "repository": "dword-design/nuxt-firebase",
+  "license": "MIT",
+  "author": "Sebastian Landwehr <info@dword-design.de>",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "commit": "base commit",
+    "depgraph": "base depgraph",
+    "prepare": "base prepare",
+    "prepublishOnly": "base prepublishOnly",
+    "release": "base release",
+    "test": "base test"
+  },
+  "dependencies": {
+    "@dword-design/functions": "^1.1.0",
+    "@dword-design/nuxt-push-plugins": "^1.0.0",
+    "cookie": "^0.4.0",
+    "firestore-parser": "^0.9.0",
+    "get-package-name": "^1.1.0",
+    "js-cookie": "^2.2.1",
+    "jwt-decode": "^2.2.0",
+    "p-props": "^3.1.0",
+    "vue": "^2.6.11"
+  },
+  "devDependencies": {
+    "@dword-design/base": "^6.1.0"
+  }
+}
