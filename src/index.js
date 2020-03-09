@@ -1,23 +1,19 @@
 import P from 'path'
-import getPackageName from 'get-package-name'
 import pushPlugins from '@dword-design/nuxt-push-plugins'
+import parsePkgName from 'parse-pkg-name'
+import packageConfig from '../package.json'
+
+const { name: packageName } = parsePkgName(packageConfig.name)
 
 export default function (config) {
-
-  this.addTemplate({ src: require.resolve('./store'), fileName: P.join('firebase', 'store.js') })
-  this.addTemplate({ src: require.resolve('./middleware'), fileName: P.join('firebase', 'middleware.js') })
+  this.addTemplate({ src: require.resolve('./config.js.template'), fileName: P.join(packageName, 'config.js'), options: config })
+  this.addTemplate({ src: require.resolve('./store'), fileName: P.join(packageName, 'store.js') })
+  this.addTemplate({ src: require.resolve('./middleware'), fileName: P.join(packageName, 'middleware.js') })
   pushPlugins(this,
-    { src: require.resolve('./universal-plugin'), fileName: P.join('firebase', 'universal-plugin.js') },
-    { src: require.resolve('./client-plugin'), fileName: P.join('firebase', 'client-plugin.js'), mode: 'client' },
-    { src: require.resolve('./axios-plugin'), fileName: P.join('firebase', 'axios-plugin.js') },
-    { src: require.resolve('./data-plugin'), fileName: P.join('firebase', 'data-plugin.js'), mode: 'client' },
+    { src: require.resolve('./universal-plugin'), fileName: P.join(packageName, 'universal-plugin.js') },
+    { src: require.resolve('./client-plugin'), fileName: P.join(packageName, 'client-plugin.js'), mode: 'client' },
+    { src: require.resolve('./axios-plugin'), fileName: P.join(packageName, 'axios-plugin.js') },
+    { src: require.resolve('./data-plugin'), fileName: P.join(packageName, 'data-plugin.js'), mode: 'client' },
   )
-  this.addModule([getPackageName(require.resolve('@nuxtjs/firebase')), {
-    config,
-    services: {
-      firestore: true,
-      auth: true,
-    },
-  }])
   this.options.router.middleware.push('auth')
 }

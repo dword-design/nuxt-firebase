@@ -37,15 +37,15 @@ export default {
       commit('setUser', user !== undefined ? { id: user.user_id, email: user.email, token: user.token } : undefined)
     },
     async register(context, { username, password }) {
-      await this.app.$fireAuth.createUserWithEmailAndPassword(username, password)
+      await this.app.$auth.createUserWithEmailAndPassword(username, password)
       await this.app.router.push({ name: 'user' })
     },
     async login(context, { username, password }) {
-      await this.app.$fireAuth.signInWithEmailAndPassword(username, password)
+      await this.app.$auth.signInWithEmailAndPassword(username, password)
       await this.app.router.push({ name: 'user' })
     },
     async logout() {
-      await this.app.$fireAuth.signOut()
+      await this.app.$auth.signOut()
       await this.app.router.push({ name: 'index' })
     },
   },

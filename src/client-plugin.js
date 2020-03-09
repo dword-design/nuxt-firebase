@@ -1,10 +1,10 @@
 import Cookie from 'js-cookie'
 
-export default async ({ app: { $fireAuth }, store }) => {
+export default async ({ app: { $auth }, store }) => {
   if (!store.getters['auth/isAuthenticated']) {
-    await $fireAuth.signOut()
+    await $auth.signOut()
   }
-  $fireAuth.onIdTokenChanged(async user => {
+  $auth.onIdTokenChanged(async user => {
     if (user) {
       const { claims, token } = await user.getIdTokenResult()
       store.dispatch('auth/setUser', { ...claims, token })
