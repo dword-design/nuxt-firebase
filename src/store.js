@@ -37,7 +37,8 @@ export default {
       commit('setUser', user !== undefined ? { id: user.user_id, email: user.email, token: user.token } : undefined)
     },
     async register(context, { username, password }) {
-      await this.app.$auth.createUserWithEmailAndPassword(username, password)
+      const { user } = await this.app.$auth.createUserWithEmailAndPassword(username, password)
+      await this.app.$firestore.collection('users').doc(user.uid).set({})
       await this.app.router.push({ name: 'user' })
     },
     async login(context, { username, password }) {
