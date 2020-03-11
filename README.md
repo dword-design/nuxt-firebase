@@ -29,6 +29,43 @@ $ yarn add @dword-design/nuxt-firebase
 ```
 <!-- /INSTALL -->
 
+## Usage
+
+Add the module to your `nuxt.config.js`:
+```
+{
+  modules: [
+    ['@dword-design/nuxt-firebase', {
+      apiKey: <api key>,
+      authDomain: <auth domain>,
+      databaseURL: <database url>,
+      projectId: <project id>,
+      storageBucket: <storage bucket>,
+      messagingSenderId: <messaging sender id>,
+      appId: <app id>,
+      measurementId: <measurement id>,
+    }],
+  ],
+}
+```
+
+Add firebase properties to a nuxt page:
+```
+import { firestoreData } from '@dword-design/nuxt-firebase/dist/helper'
+
+export default {
+  ...firestoreData(({ store, app: { $firestore } }) => ({
+    feeds: $firestore
+      .collection('users')
+      .doc(store.getters['auth/user'].id)
+      .collection('feeds'),
+  })),
+  render: () => ...
+}
+```
+
+Now you have server-side data and also reactive data on the client side!
+
 <!-- LICENSE/ -->
 ## License
 
