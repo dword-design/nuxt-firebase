@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/dword-design/nuxt-firebase/compare/v1.1.1...v1.2.0) (2020-03-13)
+
+
+### Features
+
+* add deleteUser function ([0fdb5ad](https://github.com/dword-design/nuxt-firebase/commit/0fdb5add925c6d01183cce90c69754073c96fe29))
+
 ## [1.1.1](https://github.com/dword-design/nuxt-firebase/compare/v1.1.0...v1.1.1) (2020-03-11)
 
 
