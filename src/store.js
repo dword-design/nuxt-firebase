@@ -39,14 +39,18 @@ export default {
     async register(context, { username, password }) {
       const { user } = await this.app.$auth.createUserWithEmailAndPassword(username, password)
       await this.app.$firestore.collection('users').doc(user.uid).set({})
-      await this.app.router.push({ name: 'user' })
+      await this.app.router.push({ name: 'feeds' })
     },
     async login(context, { username, password }) {
       await this.app.$auth.signInWithEmailAndPassword(username, password)
-      await this.app.router.push({ name: 'user' })
+      await this.app.router.push({ name: 'feeds' })
     },
     async logout() {
       await this.app.$auth.signOut()
+      await this.app.router.push({ name: 'index' })
+    },
+    async deleteUser() {
+      await this.app.$auth.currentUser.delete()
       await this.app.router.push({ name: 'index' })
     },
   },
