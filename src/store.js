@@ -36,22 +36,26 @@ export default {
     setUser: ({ commit }, user) => {
       commit('setUser', user !== undefined ? { id: user.user_id, email: user.email, token: user.token } : undefined)
     },
-    async register(context, { username, password }) {
+    async register(context, { username, password, destination }) {
       const { user } = await this.app.$auth.createUserWithEmailAndPassword(username, password)
+      const { redirect } = import('./config') |> await |> property('default')
       await this.app.$firestore.collection('users').doc(user.uid).set({})
-      await this.app.router.push({ name: 'feeds' })
+      await this.app.router.push(destination ?? redirect.home)
     },
-    async login(context, { username, password }) {
+    async login(context, { username, password, destination }) {
+      const { redirect } = import('./config') |> await |> property('default')
       await this.app.$auth.signInWithEmailAndPassword(username, password)
-      await this.app.router.push({ name: 'feeds' })
+      await this.app.router.push(destination ?? redirect.home)
     },
-    async logout() {
+    async logout(context, { destination } = {}) {
+      const { redirect } = import('./config') |> await |> property('default')
       await this.app.$auth.signOut()
-      await this.app.router.push({ name: 'index' })
+      await this.app.router.push(destination ?? redirect.logout)
     },
-    async deleteUser() {
+    async deleteUser(context, { destination } = {}) {
+      const { redirect } = import('./config') |> await |> property('default')
       await this.app.$auth.currentUser.delete()
-      await this.app.router.push({ name: 'index' })
+      await this.app.router.push(destination ?? redirect.logout)
     },
   },
 }

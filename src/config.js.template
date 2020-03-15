@@ -1,1 +1,11 @@
-export default <%= serialize(options) %>
+const config = <%= serialize(options) %>
+
+export default {
+  redirect: {
+    login: '/',
+    logout: '/',
+    home: '/',
+    ...config.redirect,
+  },
+  ...config,
+}
