@@ -1,3 +1,11 @@
+## [1.3.1](https://github.com/dword-design/nuxt-firebase/compare/v1.3.0...v1.3.1) (2020-03-19)
+
+
+### Bug Fixes
+
+* fix client-side sync ([23b451e](https://github.com/dword-design/nuxt-firebase/commit/23b451e62b61db94ccaed4902d9b8049b1dccfc3))
+* many fixes ([8846e66](https://github.com/dword-design/nuxt-firebase/commit/8846e661cffbfc59ddf0a436512e11493f675c6d))
+
 # [1.3.0](https://github.com/dword-design/nuxt-firebase/compare/v1.2.0...v1.3.0) (2020-03-15)
 
 
