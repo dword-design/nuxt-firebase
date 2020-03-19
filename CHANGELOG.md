@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/dword-design/nuxt-firebase/compare/v1.2.0...v1.3.0) (2020-03-15)
+
+
+### Features
+
+* various adjustments ([e1592c9](https://github.com/dword-design/nuxt-firebase/commit/e1592c9594c68005263d75b50287a29231ea2c29))
+
 # [1.2.0](https://github.com/dword-design/nuxt-firebase/compare/v1.1.1...v1.2.0) (2020-03-13)
 
 
