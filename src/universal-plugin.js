@@ -8,8 +8,8 @@ import middleware from './middleware'
 export default async ({ store }, inject) => {
 
   if (!firebase.apps.length) {
-    const config = import('./config') |> await |> property('default')
-    firebase.initializeApp(config)
+    const { firebaseConfig } = import('./config') |> await |> property('default')
+    firebase.initializeApp(firebaseConfig)
   }
 
   inject('firestore', firebase.firestore())

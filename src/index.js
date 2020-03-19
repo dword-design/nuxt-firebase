@@ -6,7 +6,11 @@ import packageConfig from '../package.json'
 const { name: packageName } = parsePkgName(packageConfig.name)
 
 export default function (config) {
-  this.addTemplate({ src: require.resolve('./config.js.template'), fileName: P.join(packageName, 'config.js'), options: config })
+  this.addTemplate({
+    src: require.resolve('./config.js.template'),
+    fileName: P.join(packageName, 'config.js'),
+    options: { firebaseConfig: JSON.parse(process.env.FIREBASE_CONFIG), ...config },
+  })
   this.addTemplate({ src: require.resolve('./store'), fileName: P.join(packageName, 'store.js') })
   this.addTemplate({ src: require.resolve('./middleware'), fileName: P.join(packageName, 'middleware.js') })
   pushPlugins(this,

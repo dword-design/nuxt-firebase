@@ -1,6 +1,9 @@
-export default ({ store, app: { $firestore, $axios } }) => {
-  const { projectId } = $firestore.app.options
-  $axios.setBaseURL(`https://firestore.googleapis.com/v1beta1/projects/${projectId}/databases/(default)/documents`)
+import { property } from '@dword-design/functions'
+
+export default async ({ store, app: { $axios } }) => {
+  const { firebaseConfig: { projectId, databaseURL } } = import('./config') |> await |> property('default')
+  const host = databaseURL !== undefined ? 'https://firestore.googleapis.com' : 'http://localhost:8080'
+  $axios.setBaseURL(`${host}/v1beta1/projects/${projectId}/databases/(default)/documents`)
   $axios.onRequest(config => {
     const { token } = store.getters['auth/user'] ?? {}
     return {

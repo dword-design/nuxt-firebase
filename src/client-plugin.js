@@ -1,6 +1,14 @@
 import Cookie from 'js-cookie'
+import { property } from '@dword-design/functions'
 
-export default async ({ app: { $auth }, store }) => {
+export default async ({ app: { $auth, $firestore }, store }) => {
+
+  const { firebaseConfig: { databaseURL } } = import('./config') |> await |> property('default')
+  if (databaseURL === undefined) {
+    console.log('No database URL set. Using firebase emulator …')
+    $firestore.settings({ host: 'localhost:8080', ssl: false })
+  }
+  
   if (!store.getters['auth/isAuthenticated']) {
     await $auth.signOut()
   }
