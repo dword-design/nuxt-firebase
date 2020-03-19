@@ -2,6 +2,11 @@ import Vue from 'vue'
 import { mapValues, forIn, some, negate, constant, pickBy } from '@dword-design/functions'
 
 Vue.mixin({
+  data() {
+    return this.$options.firestore?.call(this, { store: this.$store, app: this })
+      |> pickBy((value, key) => this[key] === undefined)
+      |> mapValues(constant(undefined))
+  },
   created() {
     this.$firestoreUnsubscribers = this.$options.firestore?.call(this, { store: this.$store, app: this })
       |> mapValues((ref, name) => {
@@ -40,10 +45,5 @@ Vue.mixin({
   },
   beforeDestroy() {
     this.$firestoreUnsubscribers |> forIn(unsubscriber => unsubscriber())
-  },
-  data() {
-    return this.$options.firestore?.call(this, { store: this.$store, app: this })
-      |> pickBy((value, key) => this[key] === undefined)
-      |> mapValues(constant(undefined))
   },
 })
