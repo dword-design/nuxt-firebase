@@ -1,3 +1,10 @@
+## [1.3.2](https://github.com/dword-design/nuxt-firebase/compare/v1.3.1...v1.3.2) (2020-03-20)
+
+
+### Bug Fixes
+
+* rename username to email ([7d76ea8](https://github.com/dword-design/nuxt-firebase/commit/7d76ea8b389307537c9ad6dba713e47b3e88b54f))
+
 ## [1.3.1](https://github.com/dword-design/nuxt-firebase/compare/v1.3.0...v1.3.1) (2020-03-19)
 
 
