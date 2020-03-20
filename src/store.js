@@ -36,15 +36,15 @@ export default {
     setUser: ({ commit }, user) => {
       commit('setUser', user !== undefined ? { id: user.user_id, email: user.email, token: user.token } : undefined)
     },
-    async register(context, { username, password, destination }) {
-      const { user } = await this.app.$auth.createUserWithEmailAndPassword(username, password)
+    async register(context, { email, password, destination }) {
+      const { user } = await this.app.$auth.createUserWithEmailAndPassword(email, password)
       const { redirect } = import('./config') |> await |> property('default')
       await this.app.$firestore.collection('users').doc(user.uid).set({})
       await this.app.router.push(destination ?? redirect.home)
     },
-    async login(context, { username, password, destination }) {
+    async login(context, { email, password, destination }) {
       const { redirect } = import('./config') |> await |> property('default')
-      await this.app.$auth.signInWithEmailAndPassword(username, password)
+      await this.app.$auth.signInWithEmailAndPassword(email, password)
       await this.app.router.push(destination ?? redirect.home)
     },
     async logout(context, { destination } = {}) {
@@ -56,6 +56,9 @@ export default {
       const { redirect } = import('./config') |> await |> property('default')
       await this.app.$auth.currentUser.delete()
       await this.app.router.push(destination ?? redirect.logout)
+    },
+    sendPasswordResetEmail(context, email) {
+      return this.app.$auth.sendPasswordResetEmail(email)
     },
   },
 }
