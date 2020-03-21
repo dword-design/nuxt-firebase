@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/dword-design/nuxt-firebase/compare/v1.3.2...v1.4.0) (2020-03-21)
+
+
+### Features
+
+* add separate firebase axios instance ([07a523a](https://github.com/dword-design/nuxt-firebase/commit/07a523a150a16826ad6ece17fcdc441a3381b1b2))
+
 ## [1.3.2](https://github.com/dword-design/nuxt-firebase/compare/v1.3.1...v1.3.2) (2020-03-20)
 
 
