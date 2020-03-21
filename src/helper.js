@@ -6,12 +6,12 @@ export const firestoreToJson = ({ name, fields }) => ({ id: name |> split('/') |
 
 export const firestoreData = data => ({
   asyncData: context => {
-    const { app: { $axios } } = context
+    const { app: { $fireAxios } } = context
     if (process.client) {
       return
     }
     return data(context)
-      |> mapValues(async ({ path }) => $axios.$get(`/${path}`)
+      |> mapValues(async ({ path }) => $fireAxios.$get(`/${path}`)
         |> await
         |> firestoreParser
         |> property('documents')
