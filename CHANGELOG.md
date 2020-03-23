@@ -1,3 +1,10 @@
+## [1.4.1](https://github.com/dword-design/nuxt-firebase/compare/v1.4.0...v1.4.1) (2020-03-23)
+
+
+### Bug Fixes
+
+* add analyrics ([8a82e02](https://github.com/dword-design/nuxt-firebase/commit/8a82e02c2bc8b94eee3a8b2e1c91eaad43347455))
+
 # [1.4.0](https://github.com/dword-design/nuxt-firebase/compare/v1.3.2...v1.4.0) (2020-03-21)
 
 
