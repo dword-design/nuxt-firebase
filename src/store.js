@@ -37,9 +37,8 @@ export default {
       commit('setUser', user !== undefined ? { id: user.user_id, email: user.email, token: user.token } : undefined)
     },
     async register(context, { email, password, destination }) {
-      const { user } = await this.app.$auth.createUserWithEmailAndPassword(email, password)
+      await this.app.$auth.createUserWithEmailAndPassword(email, password)
       const { redirect } = import('./config') |> await |> property('default')
-      await this.app.$firestore.collection('users').doc(user.uid).set({})
       await this.app.router.push(destination ?? redirect.home)
     },
     async login(context, { email, password, destination }) {
