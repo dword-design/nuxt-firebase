@@ -1,3 +1,10 @@
+## [1.4.2](https://github.com/dword-design/nuxt-firebase/compare/v1.4.1...v1.4.2) (2020-03-24)
+
+
+### Bug Fixes
+
+* remove empty user document ([9f51a90](https://github.com/dword-design/nuxt-firebase/commit/9f51a902d26df7b545a9ccf1860b24e8ee9b0a9c))
+
 ## [1.4.1](https://github.com/dword-design/nuxt-firebase/compare/v1.4.0...v1.4.1) (2020-03-23)
 
 
