@@ -1,3 +1,10 @@
+## [1.4.3](https://github.com/dword-design/nuxt-firebase/compare/v1.4.2...v1.4.3) (2020-03-30)
+
+
+### Bug Fixes
+
+* upgrades ([27136b6](https://github.com/dword-design/nuxt-firebase/commit/27136b65e301ff9d1f4d18620aa22924e7230d65))
+
 ## [1.4.2](https://github.com/dword-design/nuxt-firebase/compare/v1.4.1...v1.4.2) (2020-03-24)
 
 
