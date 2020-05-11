@@ -3,6 +3,14 @@ import Vue from 'vue'
 import jwtDecode from 'jwt-decode'
 import cookie from 'cookie'
 
+const getConfig = async function () {
+  const config = import('./config') |> await |> property('default')
+  return {
+    ...config,
+    redirect: config.redirect.call(this),
+  }
+}
+
 export default {
   namespaced: true,
   state: () => ({}),
@@ -38,21 +46,21 @@ export default {
     },
     async register(context, { email, password, destination }) {
       await this.app.$auth.createUserWithEmailAndPassword(email, password)
-      const { redirect } = import('./config') |> await |> property('default')
+      const { redirect } = await getConfig.call(this)
       await this.app.router.push(destination ?? redirect.home)
     },
     async login(context, { email, password, destination }) {
-      const { redirect } = import('./config') |> await |> property('default')
+      const { redirect } = await getConfig.call(this)
       await this.app.$auth.signInWithEmailAndPassword(email, password)
       await this.app.router.push(destination ?? redirect.home)
     },
     async logout(context, { destination } = {}) {
-      const { redirect } = import('./config') |> await |> property('default')
+      const { redirect } = await getConfig.call(this)
       await this.app.$auth.signOut()
       await this.app.router.push(destination ?? redirect.logout)
     },
     async deleteUser(context, { destination } = {}) {
-      const { redirect } = import('./config') |> await |> property('default')
+      const { redirect } = await getConfig.call(this)
       await this.app.$auth.currentUser.delete()
       await this.app.router.push(destination ?? redirect.logout)
     },

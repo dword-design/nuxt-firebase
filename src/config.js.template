@@ -1,11 +1,15 @@
 const config = <%= serialize(options) %>
 
 export default {
-  redirect: {
-    login: '/',
-    logout: '/',
-    home: '/',
-    ...config.redirect,
-  },
   ...config,
+  redirect() {
+    return {
+      login: '/',
+      logout: '/',
+      home: '/',
+      ...typeof config.redirect === 'function'
+        ? config.redirect.call(this)
+        : config.redirect,
+    }
+  },
 }
