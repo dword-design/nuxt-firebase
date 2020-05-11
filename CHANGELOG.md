@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/dword-design/nuxt-firebase/compare/v1.4.3...v1.5.0) (2020-05-11)
+
+
+### Features
+
+* allow to pass a function to redirect ([489de76](https://github.com/dword-design/nuxt-firebase/commit/489de76448cb13ee3cb1393549e4bc78ecf8308b))
+
 ## [1.4.3](https://github.com/dword-design/nuxt-firebase/compare/v1.4.2...v1.4.3) (2020-03-30)
 
 
