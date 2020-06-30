@@ -1,21 +1,20 @@
-import firebase from 'firebase/app'
 import 'firebase/firestore'
 import 'firebase/auth'
+
 import { property } from '@dword-design/functions'
-import storeModule from './store'
+import firebase from 'firebase/app'
+
+import config from './config'
 import middleware from './middleware'
+import storeModule from './store'
 
-export default async ({ store }, inject) => {
-
+export default async (context, inject) => {
   if (!firebase.apps.length) {
-    const { firebaseConfig } = import('./config') |> await |> property('default')
-    firebase.initializeApp(firebaseConfig)
+    firebase.initializeApp(config.firebaseConfig)
   }
-
   inject('firestore', firebase.firestore())
   inject('auth', firebase.auth())
-
-  store.registerModule('auth', storeModule)
+  context.store.registerModule('auth', storeModule)
   const Middleware = import('../middleware') |> await |> property('default')
   Middleware.auth = middleware
 }

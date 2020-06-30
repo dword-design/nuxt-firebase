@@ -1,11 +1,14 @@
 import { last, property } from '@dword-design/functions'
 
-export default async ({ route, redirect, store }) => {
-  const { redirect: redirectConfig } = import('./config') |> await |> property('default')
-  const auth = route.meta |> last |> property('auth')
-  if (auth === 'guest' && store.getters['auth/isAuthenticated']) {
-    return redirect(redirectConfig.home)
-  } else if (auth === undefined && !store.getters['auth/isAuthenticated']) {
-    return redirect(redirectConfig.login)
+import config from './config'
+
+export default context => {
+  const auth = context.route.meta |> last |> property('auth')
+  if (auth === 'guest' && context.store.getters['auth/isAuthenticated']) {
+    return context.redirect(config.redirect.call(context).home)
   }
+  if (auth === undefined && !context.store.getters['auth/isAuthenticated']) {
+    return context.redirect(config.redirect.call(context).login)
+  }
+  return undefined
 }

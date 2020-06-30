@@ -1,18 +1,20 @@
-import { property } from '@dword-design/functions'
+import config from './config'
 
-export default async ({ store, app: { $axios } }, inject) => {
-  const { firebaseConfig: { projectId, databaseURL } } = import('./config') |> await |> property('default')
-  const host = databaseURL !== undefined ? 'https://firestore.googleapis.com' : 'http://localhost:8080'
-  const fireAxios = $axios.create({
-    baseURL: `${host}/v1beta1/projects/${projectId}/databases/(default)/documents`,
+export default (context, inject) => {
+  const host =
+    config.firebaseConfig.databaseURL === undefined
+      ? 'http://localhost:8080'
+      : 'https://firestore.googleapis.com'
+  const fireAxios = context.app.$axios.create({
+    baseURL: `${host}/v1beta1/projects/${config.firebaseConfig.projectId}/databases/(default)/documents`,
   })
-  fireAxios.onRequest(config => {
-    const { token } = store.getters['auth/user'] ?? {}
+  fireAxios.onRequest(axiosConfig => {
+    const user = context.store.getters['auth/user']
     return {
-      ...config,
+      ...axiosConfig,
       headers: {
-        ...config.headers,
-        Authorization: `Bearer ${token}`,
+        ...axiosConfig.headers,
+        ...(user ? { Authorization: `Bearer ${user.token}` } : {}),
       },
     }
   })
