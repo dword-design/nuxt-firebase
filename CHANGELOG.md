@@ -1,3 +1,10 @@
+## [1.5.1](https://github.com/dword-design/nuxt-firebase/compare/v1.5.0...v1.5.1) (2020-06-30)
+
+
+### Bug Fixes
+
+* refactoring and bugfixing ([33f82cf](https://github.com/dword-design/nuxt-firebase/commit/33f82cfa6b81cbc7a9439543d25e43f8cb270763))
+
 # [1.5.0](https://github.com/dword-design/nuxt-firebase/compare/v1.4.3...v1.5.0) (2020-05-11)
 
 
