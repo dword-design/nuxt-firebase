@@ -8,10 +8,10 @@ import config from './config'
 export default {
   actions: {
     async deleteUser(context, payload = {}) {
-      await this.app.$auth.currentUser.delete()
       await this.app.router.push(
         payload.destination || config.redirect.call(this).logout
       )
+      return this.app.$auth.currentUser.delete()
     },
     async login(context, payload) {
       await this.app.$auth.signInWithEmailAndPassword(
