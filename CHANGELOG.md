@@ -1,3 +1,10 @@
+## [1.5.2](https://github.com/dword-design/nuxt-firebase/compare/v1.5.1...v1.5.2) (2020-07-01)
+
+
+### Bug Fixes
+
+* fix typo ([8bed3a2](https://github.com/dword-design/nuxt-firebase/commit/8bed3a27c141f366acedd6c280d090d620fc9462))
+
 ## [1.5.1](https://github.com/dword-design/nuxt-firebase/compare/v1.5.0...v1.5.1) (2020-06-30)
 
 
