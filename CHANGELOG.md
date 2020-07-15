@@ -1,3 +1,10 @@
+## [2.0.2](https://github.com/dword-design/nuxt-firebase/compare/v2.0.1...v2.0.2) (2020-07-15)
+
+
+### Bug Fixes
+
+* pass redirects through ([04eb6ad](https://github.com/dword-design/nuxt-firebase/commit/04eb6ad16c8c8398d97e293eb64d4922fa0d9931))
+
 ## [2.0.1](https://github.com/dword-design/nuxt-firebase/compare/v2.0.0...v2.0.1) (2020-07-15)
 
 
