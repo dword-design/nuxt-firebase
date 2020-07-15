@@ -1,3 +1,15 @@
+# [2.0.0](https://github.com/dword-design/nuxt-firebase/compare/v1.5.3...v2.0.0) (2020-07-15)
+
+
+### Features
+
+* use @nuxtjs/auth ([f5b5041](https://github.com/dword-design/nuxt-firebase/commit/f5b5041b99c269ee6e1b513fc0737c2db7b1b0c0))
+
+
+### BREAKING CHANGES
+
+* use @nuxtjs/auth
+
 ## [1.5.3](https://github.com/dword-design/nuxt-firebase/compare/v1.5.2...v1.5.3) (2020-07-05)
 
 
