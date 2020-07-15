@@ -1,29 +1,26 @@
 import 'firebase/analytics'
 
+// Current version of @nuxtjs/auth does not support external deps in schemes
+// because the schemes are copied to a schemes subfolder
+import getUserFromToken from '@dword-design/firebase-get-user-from-token'
 import firebase from 'firebase/app'
 import Cookie from 'js-cookie'
 
 import config from './config'
 
-export default async context => {
+export default context => {
   if (config.firebaseConfig.databaseURL === undefined) {
     console.log('No database URL set. Using firebase emulator …')
     context.app.$firestore.settings({ host: 'localhost:8080', ssl: false })
   }
   firebase.analytics()
-  if (!context.store.getters['auth/isAuthenticated']) {
-    await context.app.$auth.signOut()
-  }
-  context.app.$auth.onIdTokenChanged(async user => {
+  context.app.$fireAuth.onIdTokenChanged(async user => {
     if (user) {
-      const credentials = await user.getIdTokenResult()
-      context.store.dispatch('auth/setUser', {
-        ...credentials.claims,
-        token: credentials.token,
-      })
-      Cookie.set('authSession', credentials.token)
+      const token = await user.getIdToken()
+      context.app.$auth.setUser(token |> getUserFromToken |> await)
+      Cookie.set('authSession', token)
     } else {
-      context.store.dispatch('auth/setUser', undefined)
+      await context.app.$auth.reset()
       Cookie.remove('authSession')
     }
   })

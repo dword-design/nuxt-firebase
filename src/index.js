@@ -1,4 +1,6 @@
+import { identity } from '@dword-design/functions'
 import pushPlugins from '@dword-design/nuxt-push-plugins'
+import getPackageName from 'get-package-name'
 import parsePkgName from 'parse-pkg-name'
 import P from 'path'
 
@@ -8,6 +10,18 @@ const packageName = parsePkgName(packageConfig.name).name
 
 export default function (moduleOptions) {
   const options = { ...this.options.firebase, ...moduleOptions }
+  this.addModule([
+    getPackageName(require.resolve('@dword-design/nuxt-auth')),
+    {
+      strategies: {
+        firebase: {
+          _provider: identity,
+          _scheme: require.resolve('./auth-scheme'),
+        },
+        local: false,
+      },
+    },
+  ])
   this.addTemplate({
     fileName: P.join(packageName, 'config.js'),
     options: {
@@ -15,14 +29,6 @@ export default function (moduleOptions) {
       ...options,
     },
     src: require.resolve('./config.js.template'),
-  })
-  this.addTemplate({
-    fileName: P.join(packageName, 'store.js'),
-    src: require.resolve('./store'),
-  })
-  this.addTemplate({
-    fileName: P.join(packageName, 'middleware.js'),
-    src: require.resolve('./middleware'),
   })
   pushPlugins(
     this,
@@ -45,5 +51,4 @@ export default function (moduleOptions) {
       src: require.resolve('./data-plugin'),
     }
   )
-  this.options.router.middleware.push('auth')
 }
