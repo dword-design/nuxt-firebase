@@ -13,6 +13,7 @@ export default function (moduleOptions) {
   this.addModule([
     getPackageName(require.resolve('@dword-design/nuxt-auth')),
     {
+      redirect: options.redirect,
       strategies: {
         firebase: {
           _provider: identity,
