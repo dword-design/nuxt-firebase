@@ -24,10 +24,7 @@ export default function (moduleOptions) {
   ])
   this.addTemplate({
     fileName: P.join(packageName, 'config.js'),
-    options: {
-      firebaseConfig: JSON.parse(process.env.FIREBASE_CONFIG),
-      ...options,
-    },
+    options,
     src: require.resolve('./config.js.template'),
   })
   pushPlugins(
