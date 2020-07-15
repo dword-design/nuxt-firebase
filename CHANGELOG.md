@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/dword-design/nuxt-firebase/compare/v2.0.0...v2.0.1) (2020-07-15)
+
+
+### Bug Fixes
+
+* remove env ([936338d](https://github.com/dword-design/nuxt-firebase/commit/936338db1bf7b1483bc9a002de513b5e12964d18))
+
 # [2.0.0](https://github.com/dword-design/nuxt-firebase/compare/v1.5.3...v2.0.0) (2020-07-15)
 
 
