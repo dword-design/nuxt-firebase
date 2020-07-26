@@ -1,3 +1,11 @@
+## [2.0.3](https://github.com/dword-design/nuxt-firebase/compare/v2.0.2...v2.0.3) (2020-07-26)
+
+
+### Bug Fixes
+
+* also add firebase as dev dep ([ac85ffd](https://github.com/dword-design/nuxt-firebase/commit/ac85ffd5e8a3fa688a8a82cb6b1e258deebe4f33))
+* make firebase a peer dependency ([9a7d886](https://github.com/dword-design/nuxt-firebase/commit/9a7d8864d0eaf1c10d31203bd0ba762f1d33d3b1))
+
 ## [2.0.2](https://github.com/dword-design/nuxt-firebase/compare/v2.0.1...v2.0.2) (2020-07-15)
 
 
