@@ -23,7 +23,6 @@
     "@dword-design/nuxt-auth": "^1.0.0",
     "@dword-design/nuxt-push-plugins": "^1.0.0",
     "cookie": "^0.4.0",
-    "firebase": "^7.10.0",
     "firestore-parser": "^0.9.0",
     "get-package-name": "^1.1.0",
     "js-cookie": "^2.2.1",
@@ -33,6 +32,9 @@
   },
   "devDependencies": {
     "@dword-design/base": "^6.1.0"
+  },
+  "peerDependencies": {
+    "firebase": "^7.17.1"
   },
   "publishConfig": {
     "access": "public"
