@@ -1,4 +1,4 @@
-import { last, map, mapValues, property, split } from '@dword-design/functions'
+import { last, map, mapValues, split } from '@dword-design/functions'
 import firestoreParser from 'firestore-parser'
 import pProps from 'p-props'
 
@@ -8,22 +8,27 @@ export const firestoreToJson = doc => ({
 })
 
 export const firestoreData = data => ({
-  asyncData: context => {
-    if (process.client) {
-      return {}
-    }
-    return (
-      data(context)
-      |> mapValues(
-        async ref =>
+  asyncData: context =>
+    data(context)
+    |> mapValues(async ref => {
+      if (process.client) {
+        return ref.where === undefined ? undefined : []
+      }
+      try {
+        const result =
           context.app.$fireAxios.$get(`/${ref.path}`)
           |> await
           |> firestoreParser
-          |> property('documents')
-          |> map(firestoreToJson)
-      )
-      |> pProps
-    )
-  },
+        return ref.where === undefined
+          ? result |> firestoreToJson
+          : result.documents |> map(firestoreToJson)
+      } catch (error) {
+        if (error.response.status !== 404) {
+          throw error
+        }
+      }
+      return undefined
+    })
+    |> pProps,
   firestore: data,
 })

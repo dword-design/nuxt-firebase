@@ -16,42 +16,40 @@ Vue.mixin({
     this.$firestoreUnsubscribers =
       this.$options.firestore?.call(this, { app: this, store: this.$store })
       |> mapValues((ref, name) => {
-        if (this[name] === undefined) {
-          Vue.util.defineReactive(this, name, [])
+        if (!(name in this)) {
+          Vue.util.defineReactive(
+            this,
+            name,
+            ref.where === undefined ? undefined : []
+          )
         }
         return ref.onSnapshot(snapshot => {
-          if (snapshot.docChanges !== undefined) {
-            if (this[name] === undefined) {
-              this[name] = []
-            }
-            return (
-              snapshot.docChanges()
-              |> forIn(change => {
-                const value = { id: change.doc.id, ...change.doc.data() }
-                switch (change.type) {
-                  case 'added':
-                    if (this[name] |> (some({ id: value.id }) |> negate)) {
-                      this[name].splice(change.newIndex, 0, value)
-                    }
-                    break
-                  case 'removed':
+          if (snapshot.docChanges === undefined) {
+            this[name] = snapshot.data()
+          } else {
+            forIn(change => {
+              const value = { id: change.doc.id, ...change.doc.data() }
+              switch (change.type) {
+                case 'added':
+                  if (this[name] |> (some({ id: value.id }) |> negate)) {
+                    this[name].splice(change.newIndex, 0, value)
+                  }
+                  break
+                case 'removed':
+                  this[name].splice(change.oldIndex, 1)
+                  break
+                case 'modified':
+                  if (change.oldIndex === change.newIndex) {
+                    this[name].splice(change.newIndex, 1, value)
+                  } else {
                     this[name].splice(change.oldIndex, 1)
-                    break
-                  case 'modified':
-                    if (change.oldIndex === change.newIndex) {
-                      this[name].splice(change.newIndex, 1, value)
-                    } else {
-                      this[name].splice(change.oldIndex, 1)
-                      this[name].splice(change.newIndex, 0, value)
-                    }
-                    break
-                  default:
-                }
-              })
-            )
+                    this[name].splice(change.newIndex, 0, value)
+                  }
+                  break
+                default:
+              }
+            })(snapshot.docChanges())
           }
-          this[name] = snapshot.data()
-          return undefined
         })
       })
   },
