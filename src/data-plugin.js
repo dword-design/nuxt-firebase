@@ -16,7 +16,7 @@ Vue.mixin({
     this.$firestoreUnsubscribers =
       this.$options.firestore?.call(this, { app: this, store: this.$store })
       |> mapValues((ref, name) => {
-        if (this[name] === undefined && ref.where !== undefined) {
+        if (this[name] === undefined) {
           Vue.util.defineReactive(this, name, [])
         }
         return ref.onSnapshot(snapshot => {
