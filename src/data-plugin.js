@@ -1,9 +1,4 @@
-import {
-  forIn,
-  mapValues,
-  negate,
-  /* pickBy, */ some,
-} from '@dword-design/functions'
+import { forIn, mapValues, negate, some } from '@dword-design/functions'
 import Vue from 'vue'
 
 Vue.mixin({
@@ -46,9 +41,8 @@ Vue.mixin({
   },
   data() {
     return (
-      this.$options.firestore?.call(this, { app: this, store: this.$store }) |>
-      // ((ref, key) => !(key in this))
-      mapValues(ref => (ref.where === undefined ? undefined : []))
+      this.$options.firestore?.call(this, { app: this, store: this.$store })
+      |> mapValues(ref => (ref.where === undefined ? undefined : []))
     )
   },
 })
