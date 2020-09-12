@@ -1,10 +1,8 @@
 import {
-  constant,
   forIn,
   mapValues,
   negate,
-  pickBy,
-  some,
+  /* pickBy, */ some,
 } from '@dword-design/functions'
 import Vue from 'vue'
 
@@ -15,15 +13,8 @@ Vue.mixin({
   created() {
     this.$firestoreUnsubscribers =
       this.$options.firestore?.call(this, { app: this, store: this.$store })
-      |> mapValues((ref, name) => {
-        if (!(name in this)) {
-          Vue.util.defineReactive(
-            this,
-            name,
-            ref.where === undefined ? undefined : []
-          )
-        }
-        return ref.onSnapshot(snapshot => {
+      |> mapValues((ref, name) =>
+        ref.onSnapshot(snapshot => {
           if (snapshot.docChanges === undefined) {
             this[name] = snapshot.data()
           } else {
@@ -51,13 +42,13 @@ Vue.mixin({
             })(snapshot.docChanges())
           }
         })
-      })
+      )
   },
   data() {
     return (
-      this.$options.firestore?.call(this, { app: this, store: this.$store })
-      |> pickBy((value, key) => this[key] === undefined)
-      |> mapValues(constant(undefined))
+      this.$options.firestore?.call(this, { app: this, store: this.$store }) |>
+      // ((ref, key) => !(key in this))
+      mapValues(ref => (ref.where === undefined ? undefined : []))
     )
   },
 })
