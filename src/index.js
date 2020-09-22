@@ -18,6 +18,7 @@ export default function (moduleOptions) {
         firebase: {
           _provider: identity,
           _scheme: require.resolve('./auth-scheme'),
+          firebaseAdminConfig: options.firebaseAdminConfig,
         },
         local: false,
       },
