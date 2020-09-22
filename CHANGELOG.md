@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/dword-design/nuxt-firebase/compare/v2.0.5...v2.1.0) (2020-09-22)
+
+
+### Features
+
+* use firebase to verify id tokens ([6ccc4b0](https://github.com/dword-design/nuxt-firebase/commit/6ccc4b06131a5b3ea3e3f3c3a1a9acfeddf808d6))
+
 ## [2.0.5](https://github.com/dword-design/nuxt-firebase/compare/v2.0.4...v2.0.5) (2020-09-12)
 
 
