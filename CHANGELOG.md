@@ -1,3 +1,10 @@
+## [2.1.1](https://github.com/dword-design/nuxt-firebase/compare/v2.1.0...v2.1.1) (2020-10-22)
+
+
+### Bug Fixes
+
+* inject analytics ([9ca9765](https://github.com/dword-design/nuxt-firebase/commit/9ca9765b1d9dfd02d5e3041548626a7315af019a))
+
 # [2.1.0](https://github.com/dword-design/nuxt-firebase/compare/v2.0.5...v2.1.0) (2020-09-22)
 
 
