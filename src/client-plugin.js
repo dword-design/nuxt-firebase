@@ -5,12 +5,12 @@ import Cookie from 'js-cookie'
 
 import config from './config'
 
-export default context => {
+export default (context, inject) => {
   if (config.firebaseConfig.databaseURL === undefined) {
     console.log('No database URL set. Using firebase emulator …')
     context.app.$firestore.settings({ host: 'localhost:8080', ssl: false })
   }
-  firebase.analytics()
+  inject('fireAnalytics', firebase.analytics())
   context.app.$fireAuth.onIdTokenChanged(async user => {
     if (user) {
       const token = await user.getIdToken()
