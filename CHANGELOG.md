@@ -1,3 +1,10 @@
+## [2.1.2](https://github.com/dword-design/nuxt-firebase/compare/v2.1.1...v2.1.2) (2020-12-10)
+
+
+### Bug Fixes
+
+* replace get-package-name with depcheck-package-name ([f79aff6](https://github.com/dword-design/nuxt-firebase/commit/f79aff6e6cb18b429c3173f094bfae2a00dfd29d))
+
 ## [2.1.1](https://github.com/dword-design/nuxt-firebase/compare/v2.1.0...v2.1.1) (2020-10-22)
 
 
