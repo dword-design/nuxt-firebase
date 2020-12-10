@@ -1,17 +1,17 @@
 import { identity } from '@dword-design/functions'
 import pushPlugins from '@dword-design/nuxt-push-plugins'
-import getPackageName from 'get-package-name'
+import packageName from 'depcheck-package-name'
 import parsePkgName from 'parse-pkg-name'
 import P from 'path'
 
 import packageConfig from '@/package.json'
 
-const packageName = parsePkgName(packageConfig.name).name
+const name = parsePkgName(packageConfig.name).name
 
 export default function (moduleOptions) {
   const options = { ...this.options.firebase, ...moduleOptions }
   this.addModule([
-    getPackageName(require.resolve('@dword-design/nuxt-auth')),
+    packageName`@dword-design/nuxt-auth`,
     {
       redirect: options.redirect,
       strategies: {
@@ -25,27 +25,27 @@ export default function (moduleOptions) {
     },
   ])
   this.addTemplate({
-    fileName: P.join(packageName, 'config.js'),
+    fileName: P.join(name, 'config.js'),
     options,
     src: require.resolve('./config.js.template'),
   })
   pushPlugins(
     this,
     {
-      fileName: P.join(packageName, 'universal-plugin.js'),
+      fileName: P.join(name, 'universal-plugin.js'),
       src: require.resolve('./universal-plugin'),
     },
     {
-      fileName: P.join(packageName, 'client-plugin.js'),
+      fileName: P.join(name, 'client-plugin.js'),
       mode: 'client',
       src: require.resolve('./client-plugin'),
     },
     {
-      fileName: P.join(packageName, 'axios-plugin.js'),
+      fileName: P.join(name, 'axios-plugin.js'),
       src: require.resolve('./axios-plugin'),
     },
     {
-      fileName: P.join(packageName, 'data-plugin.js'),
+      fileName: P.join(name, 'data-plugin.js'),
       mode: 'client',
       src: require.resolve('./data-plugin'),
     }
