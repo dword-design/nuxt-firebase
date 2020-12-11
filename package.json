@@ -33,10 +33,10 @@
   },
   "devDependencies": {
     "@dword-design/base": "^6.1.0",
-    "firebase": "^7.17.1"
+    "firebase": "^8.0.0"
   },
   "peerDependencies": {
-    "firebase": "^7.17.1"
+    "firebase": "^8.0.0"
   },
   "publishConfig": {
     "access": "public"
