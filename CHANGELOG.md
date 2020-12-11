@@ -1,3 +1,10 @@
+## [2.1.3](https://github.com/dword-design/nuxt-firebase/compare/v2.1.2...v2.1.3) (2020-12-11)
+
+
+### Bug Fixes
+
+* **deps:** update dependency firebase to v8 ([1477be6](https://github.com/dword-design/nuxt-firebase/commit/1477be6e436a770b6b6bfdda679b54a7ac62528e))
+
 ## [2.1.2](https://github.com/dword-design/nuxt-firebase/compare/v2.1.1...v2.1.2) (2020-12-10)
 
 
