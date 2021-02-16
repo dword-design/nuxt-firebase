@@ -1,3 +1,10 @@
+## [2.1.4](https://github.com/dword-design/nuxt-firebase/compare/v2.1.3...v2.1.4) (2021-02-16)
+
+
+### Bug Fixes
+
+* update dependency @dword-design/base to v7 ([#14](https://github.com/dword-design/nuxt-firebase/issues/14)) ([82d55b2](https://github.com/dword-design/nuxt-firebase/commit/82d55b2233b46dcc3fc8b2f81e42e43ea161b036))
+
 ## [2.1.3](https://github.com/dword-design/nuxt-firebase/compare/v2.1.2...v2.1.3) (2020-12-11)
 
 
