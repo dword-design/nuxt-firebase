@@ -99,11 +99,11 @@ export default {
 Now you have server-side data and also reactive data on the client side!
 
 <!-- LICENSE/ -->
-## Contributing
+## Contribute
 
 Are you missing something or want to contribute? Feel free to file an [issue](https://github.com/dword-design/nuxt-firebase/issues) or [pull request](https://github.com/dword-design/nuxt-firebase/pulls)! ⚙️
 
-## Support Me
+## Support
 
 Hey, I am Sebastian Landwehr, a freelance web developer, and I love developing web apps and open source packages. If you want to support me so that I can keep packages up to date and build more helpful tools, you can donate here:
 
