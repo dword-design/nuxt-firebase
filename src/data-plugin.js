@@ -1,9 +1,9 @@
-import { forIn, mapValues, negate, some } from '@dword-design/functions'
+import { forEach, mapValues, negate, some } from '@dword-design/functions'
 import Vue from 'vue'
 
 Vue.mixin({
   beforeDestroy() {
-    forIn(unsubscriber => unsubscriber())(this.$firestoreUnsubscribers)
+    forEach(this.$firestoreUnsubscribers, unsubscriber => unsubscriber())
   },
   created() {
     this.$firestoreUnsubscribers =
@@ -13,7 +13,7 @@ Vue.mixin({
           if (snapshot.docChanges === undefined) {
             this[name] = snapshot.data()
           } else {
-            forIn(change => {
+            forEach(snapshot.docChanges(), change => {
               const value = { id: change.doc.id, ...change.doc.data() }
               switch (change.type) {
                 case 'added':
@@ -34,7 +34,7 @@ Vue.mixin({
                   break
                 default:
               }
-            })(snapshot.docChanges())
+            })
           }
         })
       )
