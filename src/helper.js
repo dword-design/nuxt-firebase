@@ -19,6 +19,7 @@ export const firestoreData = data => ({
           context.app.$fireAxios.$get(`/${ref.path}`)
           |> await
           |> firestoreParser
+
         return ref.where === undefined
           ? result |> firestoreToJson
           : result.documents |> map(firestoreToJson)
@@ -27,6 +28,7 @@ export const firestoreData = data => ({
           throw error
         }
       }
+
       return undefined
     })
     |> pProps,

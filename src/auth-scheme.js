@@ -27,10 +27,13 @@ export default class {
     if (!this.$auth.ctx.req.headers.cookie) {
       return undefined
     }
+
     const cookies = cookie.parse(this.$auth.ctx.req.headers.cookie)
+
     const token = cookies.authSession
     try {
       const user = await this.firebase.auth().verifyIdToken(token)
+
       return {
         email: user.email,
         emailVerified: user.email_verified,
