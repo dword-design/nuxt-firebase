@@ -101,7 +101,7 @@ Now you have server-side data and also reactive data on the client side!
 <!-- LICENSE/ -->
 ## Contribute
 
-Are you missing something or want to contribute? Feel free to file an [issue](https://github.com/dword-design/nuxt-firebase/issues) or [pull request](https://github.com/dword-design/nuxt-firebase/pulls)! ⚙️
+Are you missing something or want to contribute? Feel free to file an [issue](https://github.com/dword-design/nuxt-firebase/issues) or a [pull request](https://github.com/dword-design/nuxt-firebase/pulls)! ⚙️
 
 ## Support
 
