@@ -1,3 +1,10 @@
+## [2.1.9](https://github.com/dword-design/nuxt-firebase/compare/v2.1.8...v2.1.9) (2021-04-08)
+
+
+### Bug Fixes
+
+* remove databaseURL ([41300c1](https://github.com/dword-design/nuxt-firebase/commit/41300c1a00be9f7d3d08fa04d09f86aa2ec0f62e))
+
 ## [2.1.8](https://github.com/dword-design/nuxt-firebase/compare/v2.1.7...v2.1.8) (2021-03-31)
 
 
