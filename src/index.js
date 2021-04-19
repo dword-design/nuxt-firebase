@@ -1,6 +1,6 @@
 import { identity } from '@dword-design/functions'
-import pushPlugins from '@dword-design/nuxt-push-plugins'
 import packageName from 'depcheck-package-name'
+import nuxtPushPlugins from 'nuxt-push-plugins'
 import parsePackagejsonName from 'parse-packagejson-name'
 import P from 'path'
 
@@ -29,7 +29,7 @@ export default function (moduleOptions) {
     options,
     src: require.resolve('./config.js.template'),
   })
-  pushPlugins(
+  nuxtPushPlugins(
     this,
     {
       fileName: P.join(name, 'universal-plugin.js'),

@@ -1197,13 +1197,6 @@
     "@nuxtjs/auth" "^4.9.1"
     depcheck-package-name "^1.0.0"
 
-"@dword-design/nuxt-push-plugins@^1.0.0":
-  version "1.0.14"
-  resolved "https://registry.yarnpkg.com/@dword-design/nuxt-push-plugins/-/nuxt-push-plugins-1.0.14.tgz#7a3f3f5c78a0dc4b3b3ce530d000e02a64e0c316"
-  integrity sha512-t9XKkJVAub+XB1fcj1R1k6WfTLCwUUrFOE5tQ5Et4iUQbaCgmKKAoVmdYnfVMMm5bAuIEjvMxBqz9XjXvmuo7Q==
-  dependencies:
-    "@dword-design/functions" "^3.0.0"
-
 "@eslint/eslintrc@^0.4.0":
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/@eslint/eslintrc/-/eslintrc-0.4.0.tgz#99cc0a0584d72f1df38b900fb062ba995f395547"
@@ -7466,6 +7459,13 @@ number-is-nan@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
   integrity sha1-CXtgK1NCKlIsGvuHkDGDNpQaAR0=
+
+nuxt-push-plugins@^1.0.16:
+  version "1.0.16"
+  resolved "https://registry.yarnpkg.com/nuxt-push-plugins/-/nuxt-push-plugins-1.0.16.tgz#0f4dc86515092dcc667fccd97315aa0cdc017e5a"
+  integrity sha512-3KUVARTJ9x6gQ3s+vgp63levm7L49rwbrNoI+W11MtyE92frqrA3nO7yIsLFwtmRsBrw46UtHJKMm8tQuTtbnw==
+  dependencies:
+    "@dword-design/functions" "^3.0.0"
 
 nyc@^15.0.0:
   version "15.1.0"
