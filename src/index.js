@@ -1,12 +1,12 @@
 import { identity } from '@dword-design/functions'
 import pushPlugins from '@dword-design/nuxt-push-plugins'
 import packageName from 'depcheck-package-name'
-import parsePkgName from 'parse-pkg-name'
+import parsePackagejsonName from 'parse-packagejson-name'
 import P from 'path'
 
 import packageConfig from '@/package.json'
 
-const name = parsePkgName(packageConfig.name).name
+const name = parsePackagejsonName(packageConfig.name).fullName
 
 export default function (moduleOptions) {
   const options = { ...this.options.firebase, ...moduleOptions }
