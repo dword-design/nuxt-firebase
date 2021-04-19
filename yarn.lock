@@ -1189,10 +1189,10 @@
     lodash "^4.17.15"
     tinycolor2 "^1.4.1"
 
-"@dword-design/nuxt-auth@^1.0.0":
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/@dword-design/nuxt-auth/-/nuxt-auth-1.0.5.tgz#2c073298938c974f4bb5b315da39cab4e6cade66"
-  integrity sha512-wn4ec6EN/OndDcXvDLZFQXVsr5v8IYWTbjWBps6rlbxw/Kh3swn/8KxIy8QzlkzbjDpfh5g8bePZk9Xtq+e7Lw==
+"@dword-design/nuxt-auth@^1.0.5":
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/@dword-design/nuxt-auth/-/nuxt-auth-1.0.6.tgz#1f0181a4a8a9effbd602c8de0473645aa810d974"
+  integrity sha512-xrUevxtncw9X6C2yv+r0f8l5fQGP+8EYrnsEs1kFbXJPp9WohwLUVQr7eIQBB7ceqZ2kNXxFBvImqKSbaHo8oA==
   dependencies:
     "@nuxtjs/auth" "^4.9.1"
     depcheck-package-name "^1.0.0"
