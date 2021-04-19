@@ -1,3 +1,11 @@
+## [2.1.11](https://github.com/dword-design/nuxt-firebase/compare/v2.1.10...v2.1.11) (2021-04-19)
+
+
+### Bug Fixes
+
+* fix deprecated dependency ([#31](https://github.com/dword-design/nuxt-firebase/issues/31)) ([1e0d0c8](https://github.com/dword-design/nuxt-firebase/commit/1e0d0c87384a13f73b1430677e8e3dcde74cbf0a))
+* lock file maintenance ([#24](https://github.com/dword-design/nuxt-firebase/issues/24)) ([84437b3](https://github.com/dword-design/nuxt-firebase/commit/84437b39103cc82da4c82810b93609810a9ac0e7))
+
 ## [2.1.10](https://github.com/dword-design/nuxt-firebase/compare/v2.1.9...v2.1.10) (2021-04-12)
 
 
