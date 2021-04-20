@@ -1,7 +1,7 @@
 {
   "name": "@dword-design/nuxt-firebase",
   "version": "2.1.11",
-  "description": "",
+  "description": null,
   "repository": "dword-design/nuxt-firebase",
   "funding": "https://www.buymeacoffee.com/dword",
   "license": "MIT",
@@ -41,5 +41,7 @@
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "homepage": null,
+  "keywords": []
 }
