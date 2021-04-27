@@ -1,3 +1,10 @@
+## [2.1.14](https://github.com/dword-design/nuxt-firebase/compare/v2.1.13...v2.1.14) (2021-04-27)
+
+
+### Bug Fixes
+
+* await addModule ([#37](https://github.com/dword-design/nuxt-firebase/issues/37)) ([0ef9e28](https://github.com/dword-design/nuxt-firebase/commit/0ef9e2856e2f8b4bccf7ab442249e0c984362478))
+
 ## [2.1.13](https://github.com/dword-design/nuxt-firebase/compare/v2.1.12...v2.1.13) (2021-04-22)
 
 
