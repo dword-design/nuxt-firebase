@@ -8,9 +8,9 @@ import packageConfig from '@/package.json'
 
 const name = parsePackagejsonName(packageConfig.name).fullName
 
-export default function (moduleOptions) {
-  const options = { ...this.options.firebase, ...moduleOptions }
-  this.addModule([
+export default async function (options) {
+  options = { ...this.options.firebase, ...options }
+  await this.addModule([
     packageName`@dword-design/nuxt-auth`,
     {
       redirect: options.redirect,
