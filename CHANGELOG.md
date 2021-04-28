@@ -1,3 +1,10 @@
+## [2.1.15](https://github.com/dword-design/nuxt-firebase/compare/v2.1.14...v2.1.15) (2021-04-28)
+
+
+### Bug Fixes
+
+* updated package.json[description] ([#35](https://github.com/dword-design/nuxt-firebase/issues/35)) ([79e76bb](https://github.com/dword-design/nuxt-firebase/commit/79e76bb09bd1445140287ba85ec0e77c25efeaaf))
+
 ## [2.1.14](https://github.com/dword-design/nuxt-firebase/compare/v2.1.13...v2.1.14) (2021-04-27)
 
 
