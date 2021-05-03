@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "@dword-design/functions": "^4.0.0",
-    "@dword-design/nuxt-auth": "^1.0.0",
+    "@dword-design/nuxt-auth": "^2.0.0",
     "cookie": "^0.4.0",
     "depcheck-package-name": "^1.0.0",
     "firebase-admin": "^9.2.0",
