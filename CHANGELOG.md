@@ -1,3 +1,10 @@
+## [3.0.1](https://github.com/dword-design/nuxt-firebase/compare/v3.0.0...v3.0.1) (2021-05-03)
+
+
+### Bug Fixes
+
+* update dependency @dword-design/functions to v4 ([#40](https://github.com/dword-design/nuxt-firebase/issues/40)) ([9ae5c5b](https://github.com/dword-design/nuxt-firebase/commit/9ae5c5b79ff41fa787b313ed8aeee2c0d1a0980a))
+
 # [3.0.0](https://github.com/dword-design/nuxt-firebase/compare/v2.1.15...v3.0.0) (2021-05-03)
 
 
