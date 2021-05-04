@@ -1,3 +1,12 @@
+## [3.0.2](https://github.com/dword-design/nuxt-firebase/compare/v3.0.1...v3.0.2) (2021-05-04)
+
+
+### Bug Fixes
+
+* update dependency @dword-design/nuxt-auth to v2 ([#41](https://github.com/dword-design/nuxt-firebase/issues/41)) ([aa84cfa](https://github.com/dword-design/nuxt-firebase/commit/aa84cfaae529ba7527fffabe8db211950cccade5))
+* update dependency depcheck-package-name to v2 ([#42](https://github.com/dword-design/nuxt-firebase/issues/42)) ([039467a](https://github.com/dword-design/nuxt-firebase/commit/039467a2efa1a4d04fc42b361b8555780f975b1a))
+* update dependency nuxt-push-plugins to v2 ([#43](https://github.com/dword-design/nuxt-firebase/issues/43)) ([41e7e5b](https://github.com/dword-design/nuxt-firebase/commit/41e7e5ba014eecca2ba3b2881606c1cc7d11f2ba))
+
 ## [3.0.1](https://github.com/dword-design/nuxt-firebase/compare/v3.0.0...v3.0.1) (2021-05-03)
 
 
