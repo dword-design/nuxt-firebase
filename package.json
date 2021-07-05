@@ -2,7 +2,7 @@
   "name": "@dword-design/nuxt-firebase",
   "version": "3.0.4",
   "repository": "dword-design/nuxt-firebase",
-  "funding": "https://www.buymeacoffee.com/dword",
+  "funding": "https://github.com/sponsors/dword-design",
   "license": "MIT",
   "author": "Sebastian Landwehr <info@sebastianlandwehr.com>",
   "main": "dist/index.js",
