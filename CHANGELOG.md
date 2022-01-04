@@ -1,3 +1,10 @@
+## [3.0.7](https://github.com/dword-design/nuxt-firebase/compare/v3.0.6...v3.0.7) (2022-01-04)
+
+
+### Bug Fixes
+
+* lock file maintenance ([#79](https://github.com/dword-design/nuxt-firebase/issues/79)) ([5097719](https://github.com/dword-design/nuxt-firebase/commit/509771932a230be23f70fd588c422b13a28e230f))
+
 ## [3.0.6](https://github.com/dword-design/nuxt-firebase/compare/v3.0.5...v3.0.6) (2021-07-20)
 
 
