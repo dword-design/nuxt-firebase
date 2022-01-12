@@ -1,3 +1,10 @@
+## [3.0.8](https://github.com/dword-design/nuxt-firebase/compare/v3.0.7...v3.0.8) (2022-01-12)
+
+
+### Bug Fixes
+
+* update config files ([7605238](https://github.com/dword-design/nuxt-firebase/commit/7605238813f7a1437171aea3737db9e115d0b579))
+
 ## [3.0.7](https://github.com/dword-design/nuxt-firebase/compare/v3.0.6...v3.0.7) (2022-01-04)
 
 
