@@ -1,3 +1,10 @@
+## [3.0.9](https://github.com/dword-design/nuxt-firebase/compare/v3.0.8...v3.0.9) (2022-02-01)
+
+
+### Bug Fixes
+
+* convert timestamps to strings ([fe4d047](https://github.com/dword-design/nuxt-firebase/commit/fe4d047ded2ade37e207e6d08063e9f8e7a30a01))
+
 ## [3.0.8](https://github.com/dword-design/nuxt-firebase/compare/v3.0.7...v3.0.8) (2022-01-12)
 
 
