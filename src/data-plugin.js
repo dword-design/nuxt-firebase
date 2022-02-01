@@ -1,4 +1,5 @@
 import { forEach, mapValues, negate, some } from '@dword-design/functions'
+import firebase from 'firebase/app'
 import Vue from 'vue'
 
 Vue.mixin({
@@ -14,7 +15,15 @@ Vue.mixin({
             this[name] = snapshot.data()
           } else {
             forEach(snapshot.docChanges(), change => {
-              const value = { id: change.doc.id, ...change.doc.data() }
+              const value = {
+                id: change.doc.id,
+                ...(change.doc.data()
+                  |> mapValues(val =>
+                    val instanceof firebase.firestore.Timestamp
+                      ? val.toDate().toISOString()
+                      : val
+                  )),
+              }
               switch (change.type) {
                 case 'added':
                   if (this[name] |> (some({ id: value.id }) |> negate)) {
