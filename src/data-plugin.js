@@ -12,7 +12,7 @@ Vue.mixin({
       |> mapValues((ref, name) =>
         ref.onSnapshot(snapshot => {
           if (snapshot.docChanges === undefined) {
-            this[name] = snapshot.data()
+            this[name] = { id: snapshot.id, ...snapshot.data() }
           } else {
             forEach(snapshot.docChanges(), change => {
               const value = {
