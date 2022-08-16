@@ -1,3 +1,10 @@
+## [3.0.10](https://github.com/dword-design/nuxt-firebase/compare/v3.0.9...v3.0.10) (2022-08-16)
+
+
+### Bug Fixes
+
+* fix missing id ([6d94272](https://github.com/dword-design/nuxt-firebase/commit/6d942720c0a471b551efd5466c6574ddb6a4d373))
+
 ## [3.0.9](https://github.com/dword-design/nuxt-firebase/compare/v3.0.8...v3.0.9) (2022-02-01)
 
 
