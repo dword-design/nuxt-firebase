@@ -1,3 +1,10 @@
+## [3.0.11](https://github.com/dword-design/nuxt-firebase/compare/v3.0.10...v3.0.11) (2023-12-24)
+
+
+### Bug Fixes
+
+* update dependency vue to v2.7.16 ([ff1a832](https://github.com/dword-design/nuxt-firebase/commit/ff1a8326f0f0a3ac5a137319d80570bbf6915995))
+
 ## [3.0.10](https://github.com/dword-design/nuxt-firebase/compare/v3.0.9...v3.0.10) (2022-08-16)
 
 
