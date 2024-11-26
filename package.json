@@ -33,10 +33,10 @@
   },
   "devDependencies": {
     "@dword-design/base": "^8.0.0",
-    "firebase": "^8.0.0"
+    "firebase": "^9.0.0"
   },
   "peerDependencies": {
-    "firebase": "^8.0.0"
+    "firebase": "^9.0.0"
   },
   "engines": {
     "node": ">=12"
