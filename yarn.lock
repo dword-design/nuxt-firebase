@@ -4238,6 +4238,13 @@ depcheck-package-name@^2.0.0:
   dependencies:
     tagged-template-noop "^2.1.1"
 
+depcheck-package-name@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/depcheck-package-name/-/depcheck-package-name-5.0.0.tgz#5643f587b52cae1043f262f7ee642052ff03c698"
+  integrity sha512-TmI3C6OMPmDoqNkv3pTUlSgfi2KoTpckBM98+p3bsCbES9OR7oHYCzgxm0QR6DdKSkrt/mFDNx8CKhCtbWRVag==
+  dependencies:
+    tagged-template-noop "^2.1.1"
+
 depcheck-parser-babel@^2.0.0:
   version "2.0.12"
   resolved "https://registry.yarnpkg.com/depcheck-parser-babel/-/depcheck-parser-babel-2.0.12.tgz#9699df1515b66733bd6ea18269bcd5396b25ce91"
