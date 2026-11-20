@@ -29,7 +29,7 @@
     "nuxt-push-plugins": "^2.0.0",
     "p-props": "^4.0.0",
     "parse-packagejson-name": "^1.0.1",
-    "vue": "^2.6.11"
+    "vue": "^3.0.0"
   },
   "devDependencies": {
     "@dword-design/base": "^8.0.0",
